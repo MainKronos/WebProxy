@@ -1,81 +1,122 @@
 <!DOCTYPE html>
-
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Ultraviolet | Sophisticated Web Proxy</title>
+    <meta
+      name="description"
+      content="Ultraviolet is a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers. Unblock sites today!"
+    />
+    <meta
+      name="keywords"
+      content="proxy, web proxy, ultraviolet, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, un block chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass iboss, bypass lightspeed filter, holy unblocker, chromebooks, titanium network, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#434c5e"
+    />
+    <meta name="googlebot" content="index, follow, snippet" />
+    <link rel="shortcut icon" content="favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="baremux/bare.cjs" defer></script>
+    <script src="epoxy/index.js" defer></script>
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="index.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Ultraviolet (Web Proxy)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I unblock sites using Ultraviolet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply head to an official site featuring Ultraviolet such as Holy Unblocker or Incognito! You can also self-host Ultraviolet on your own web server for maximum privacy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if Ultraviolet is blocked or not working?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Join the Titanium Network Discord at discord.gg/unblock!"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
 
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-
-    <title>MainKronos Proxy</title>
-</head>
-
-<body>
-    <header>
-        <img src="logo.png" />
-        <h1>MainKronos Proxy</h1>
-    </header>
-    <div class="container mb-5">
-        <p class="mb-0 font-weight-bold">Notice: inactive sessions will be deleted after 3 days.</p>
-        <p class="mb-3 font-weight-bold">Notice 2: Treat every session id like an isolated incognito browser that
-            belongs only to you. DO NOT SHARE THE SESSION ID. All logins that you make with the session id will be saved
-            in that session. Anyone that has your session id or session url CAN ACCESS your logged in sites.</p>
-        <p class="mb-3 font-weight-bold text-danger" id="error-text" style="display: none">Error: some text</p>
-        <div class="input-group mb-2" id="password-wrapper" style="display: none">
-            <div class="input-group-prepend">
-                <span class="input-group-text">Enter password</span>
-            </div>
-            <input type="password" class="form-control" id="session-password"
-                placeholder="Password is given by host of this site.">
-        </div>
-        <div class="input-group mb-2">
-            <div class="input-group-prepend">
-                <span class="input-group-text">Enter URL</span>
-            </div>
-            <input type="text" class="form-control" id="session-url" placeholder="https://www.google.com/">
-            <div class="input-group-append">
-                <button class="btn btn-success" id="session-go">Go!</button>
-            </div>
-        </div>
-        <div class="input-group mb-4">
-            <div class="input-group-prepend">
-                <span class="input-group-text">Session ID</span>
-            </div>
-            <input readonly type="text" class="form-control disable-text" id="session-id"
-                placeholder="click onn 'Create new session ID' or 'Fill in existing session ID' from below">
-            <div class="input-group-append">
-                <button class="btn btn-secondary" id="session-create-btn" type="button">Create new session ID</button>
-            </div>
-        </div>
-        <button class="btn btn-outline-secondary" id="session-advanced-toggle">Show advanced options</button>
-        <div class="mt-2 mb-4" id="session-advanced-container" style="display: none">
-            <div class="form-check mb-1">
-                <input class="form-check-input" type="checkbox" value="" id="session-shuffling" checked>
-                <label class="form-check-label" for="session-shuffling">Enable URL Shuffling</label>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">HTTP Proxy</span>
-                </div>
-                <input type="text" class="form-control" id="session-httpproxy"
-                    placeholder="http://username:password@proxyipaddress:proxyport">
-            </div>
-        </div>
+  <body>
+    <div
+      title="Ultraviolet Logo"
+      class="flex-center logo-wrapper header-center"
+    >
+      <img class="logo" src="uv.png" alt="Ultraviolet" />
+      <h1>Ultraviolet | TN</h1>
     </div>
-    <div class="row justify-content-center m-0">
-        <table class="table w-75 table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>Session ID</th>
-                    <th>Created on</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+    <div class="flex-center desc left-margin">
+      <p>
+        Ultraviolet is highly sophisticated proxy used for evading internet
+        censorship.
+      </p>
     </div>
-</body>
 
+    <form id="uv-form" class="flex-center">
+      <input
+        id="uv-search-engine"
+        value="https://www.google.com/search?q=%s"
+        type="hidden"
+      />
+      <input id="uv-address" type="text" placeholder="Search the web freely" />
+    </form>
+    <div class="desc left-margin">
+      <p id="uv-error"></p>
+      <pre id="uv-error-code"></pre>
+    </div>
+    <footer>
+      <div>
+        <a
+          title="The TitaniumNetwork GitHub organization"
+          href="https://github.com/titaniumnetwork-dev"
+          >TitaniumNetwork</a
+        >
+        <a title="The TitaniumNetwork Discord" href="https://discord.gg/unblock"
+          >Discord</a
+        >
+        <a
+          title="The TompHTTP GitHub organization"
+          href="https://github.com/tomphttp"
+          >TompHTTP</a
+        >
+        <a
+          title="The official deployment repository for Ultraviolet"
+          href="https://github.com/titaniumnetwork-dev/Ultraviolet-App"
+          >GitHub</a
+        >
+        <a title="License information" href="credits.html">Credits</a>
+      </div>
+      <div>
+        <span>Ultraviolet &copy; TN 2023</span>
+      </div>
+    </footer>
+    <iframe style="display: none;" id="uv-frame"></iframe>
+  </body>
 </html>

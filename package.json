@@ -1,52 +1,14 @@
 {
-  "name": "webproxy",
-  "version": "1.2.64",
-  "description": "User friendly web proxy powered by testcafe-hammerhead",
-  "main": "src/index.js",
-  "scripts": {
-    "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions",
-    "start": "node src/server.js",
-    "build": "node src/build.js",
-    "bstart": "npm run build && npm run start",
-    "test": "npm run format && npm run lint && npm run build",
-    "lint": "eslint -c .eslintrc.json --ext .js src",
-    "format": "prettier --write 'src/**/*.js'",
-    "clientes5": "es-check es5 src/client/*.js public/**/*.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MainKronos/WebProxy.git"
-  },
-  "author": "Mainkronos",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MainKronos/WebProxy"
-  },
-  "homepage": "https://github.com/MainKronos/WebProxy#readme",
-  "dependencies": {
-    "async-exit-hook": "^2.0.1",
-    "lru-cache": "^7.14.1",
-    "mime": "^2.5.2",
-    "sticky-session-custom": "^1.2.0",
-    "testcafe-hammerhead": "31.6.2",
-    "uglify-js": "^3.15.3",
-    "uuid": "^8.3.2",
-    "ws": "^8.2.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "dotenv-flow": "^3.2.0",
-    "eslint": "^7.32.0",
-    "npm-force-resolutions": "0.0.10",
-    "prettier": "^2.3.2"
-  },
-  "resolutions": {
-    "tmp": "0.2.1"
-  },
+  "name": "ultraviolet-static",
+  "main": "lib/index.js",
+  "version": "1.0.5",
+  "type": "module",
   "files": [
-    "src/*",
-    "CHANGELOG.md",
-    "package.json",
-    "README.md"
-  ]
+    "public",
+    "lib"
+  ],
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "prettier": "^2.7.1"
+  }
 }

@@ -1,38 +1,26 @@
-# rammerhead
+<p align="center"><img src="https://raw.githubusercontent.com/titaniumnetwork-dev/Ultraviolet-Static/main/public/uv.png" height="200"></p>
 
-> proxy based on testcafe-hammerhead (password is `sharkie4life`)
+<h1 align="center">Ultraviolet-Static</h1>
 
-Demo link: https://demo-opensource.rammerhead.org
+Static files/assets used to spin up an Ultraviolet website.
 
-Polished closed-source-for-now browser version: https://browser.rammerhead.org (more links by awesome community members in the discord server at the end of readme)
+## Install in [Ultraviolet-App](https://github.com/titaniumnetwork-dev/Ultraviolet-App.git)
 
+See [Ultraviolet-App's Wiki](https://github.com/titaniumnetwork-dev/Ultraviolet-App/wiki/Customizing-your-frontend).
 
-## Supporting me and contributing
+## Usage outside of Ultraviolet-App/Static hosting
 
-Server infrastructure costs money and developing this project consumes a lot of my time, so I would appreciate it greatly if you become a Patreon member: https://www.patreon.com/rammerhead
+### Ultraviolet scripts
 
+This repository doesn't serve any Ultraviolet scripts. It has a `uv.config.js` to show how Ultraviolet is intended to work with this demo. Ultraviolet-App automatically merges our `uv.config.js` with the remaining UV scripts (`uv.sw.js`, `uv.client.js`, etc). **Some work has to be done in order to make this repository standalone.**
 
-## Who is this package for
+Here's how to get the remaining scripts for the purpose of hosting this repository:
 
-Package is for those who want a fully-configurable proxy that works on many sites
+1. Go to the [Ultraviolet releases](https://github.com/titaniumnetwork-dev/Ultraviolet/releases/)
+2. Find the latest release
+3. Download the latest tarball (eg. `titaniumnetwork-dev-ultraviolet-x.x.x.tgz`)
+4. Open the tarball, navigate to the `dist` directory, and extract all the scripts with the exception of `uv.config.js` (we already have a configuration) into the `public/uv/` directory in this repository.
+   You may see `.map` files. These are used for debugging. If they're too large, you can omit them without any errors.
 
-## Effectiveness of proxy
+   Do not copy `uv.config.js` from the archive!
 
-This proxy supports proxying
-- basically everything except google logins
-
-## Features of proxy
-
-The proxy allows users to create a "session". When they access their session, their localStorage and cookies will be synced with rammerhead. This allows for accurately mocking cookied requests and conveniently save their logins even if they switch devices. This also enables users to configure a custom HTTP proxy server for rammerhead to connect to for the session.
-
-## Installing and running
-
-Rammerhead recommends you to have at least **node v16** to be installed. Once you installed nodejs, clone the repo, then run `npm install` and `npm run build`.
-
-After, configure your settings in [src/config.js](src/config.js). If you wish to consistently pull updates from this repo without the hassle of merging, create `config.js` in the root folder so they override the configs in `src/`.
-
-Finally run the following to start rammerhead: `node src/server.js`
-
-## Discord server
-
-For any user-help non-issue related questions, especially pertaining to Rammerhead Browser, please ask them here: [Rammerhead Support Server](https://discord.gg/VNT4E7gN5Y).
